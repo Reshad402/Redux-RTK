@@ -1,5 +1,6 @@
 "use client";
 import { addUser } from "@/app/redux/slice";
+import Link from "next/link";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 
@@ -15,11 +16,14 @@ const AddUser = () => {
   };
 
   return (
-    <div className="text-center">
-      <h1 className="p-5 text-3xl ">Add new User</h1>
-      <input onBlur={inputName} type="text" name="name" placeholder="Name" />
-      <button onClick={() => userDispatch()}>Add User</button>
-    </div>
+    <>
+      <div className="text-center">
+        <h1 className="p-5 text-3xl ">Add new User</h1>
+        <input onBlur={inputName} type="text" name="name" placeholder="Name" />
+        <button onClick={() => userDispatch()}>Add User</button>
+      </div>
+      <Link href="/removeUser">Remove user Page</Link>
+    </>
   );
 };
 
